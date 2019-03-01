@@ -3,8 +3,8 @@ import javafx.event.EventHandler;
 import javafx.scene.layout.Pane;
 
 public class Controller {
-    View view = new View();
-    Model model = new Model();
+    private View view = new View();
+    private Model model = new Model();
     EventHandler<ActionEvent> squareButtonActionEvent = new EventHandler<ActionEvent>() {
         @Override
         public void handle(ActionEvent event)
