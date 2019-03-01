@@ -10,14 +10,14 @@ import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
 public class View{
-    Label widthLabel = new Label("Длинна");
-    Label heightLabel = new Label("Высота");
-    Label squareLabel = new Label("0");
-    Label perimeterLabel = new Label("0");
-    TextField widthField = new TextField();
-    TextField heightField = new TextField();
-    Button squareButton = new Button("Площадь");
-    Button perimeterButton = new Button("Периметр");
+    private Label widthLabel = new Label("Длинна");
+    private Label heightLabel = new Label("Высота");
+    private Label squareLabel = new Label("0");
+    private Label perimeterLabel = new Label("0");
+    private TextField widthField = new TextField();
+    private TextField heightField = new TextField();
+    private Button squareButton = new Button("Площадь");
+    private Button perimeterButton = new Button("Периметр");
 
     public View()
     {
