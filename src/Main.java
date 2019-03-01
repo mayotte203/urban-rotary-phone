@@ -5,7 +5,7 @@ import javafx.scene.Scene;
 import javafx.scene.Group;
 
 public class Main extends Application{
-    Controller controller = new Controller();
+    private Controller controller = new Controller();
     public static void main(String[] args) {
         Application.launch(args);
     }
