@@ -107,8 +107,7 @@ public class View{
     private Button bottlePourOutButton = new Button(bottlePourOutString);
     private Label bottleContentLabel= new Label();
 
-    public View()
-    {
+    public View() {
         humanNameLabel.setLayoutX(humanColumnLayoutX);
         humanNameLabel.setLayoutY(humanNameLabelLayoutY);
         humanNameField.setLayoutX(humanColumnLayoutX);
@@ -173,48 +172,38 @@ public class View{
         bottleContentLabel.setLayoutY(bottleContentLabelLayoutY);
     }
 
-    public void setHumanSetNameButtonHandler(EventHandler<ActionEvent> handler)
-    {
+    public void setHumanSetNameButtonHandler(EventHandler<ActionEvent> handler) {
         humanSetNameButton.setOnAction(handler);
     }
-    public void setHumanPourLiquidToCupButtonHandler(EventHandler<ActionEvent> handler)
-    {
+    public void setHumanPourLiquidToCupButtonHandler(EventHandler<ActionEvent> handler) {
         humanPourLiquidToCupButton.setOnAction(handler);
     }
-    public void setHumanPourLiquidToBottleButtonHandler(EventHandler<ActionEvent> handler)
-    {
+    public void setHumanPourLiquidToBottleButtonHandler(EventHandler<ActionEvent> handler) {
         humanPourLiquidToBottleButton.setOnAction(handler);
     }
-    public void setHumanDrinkFromBottleButtonHandler(EventHandler<ActionEvent> handler)
-    {
+    public void setHumanDrinkFromBottleButtonHandler(EventHandler<ActionEvent> handler) {
         humanDrinkFromBottleButton.setOnAction(handler);
     }
-    public void setHumanDrinkFromCupButtonHandler(EventHandler<ActionEvent> handler)
-    {
+    public void setHumanDrinkFromCupButtonHandler(EventHandler<ActionEvent> handler) {
         humanDrinkFromCupButton.setOnAction(handler);
     }
-    public void setCupPourJuiceButtonHandler(EventHandler<ActionEvent> handler)
-    {
+    public void setCupPourJuiceButtonHandler(EventHandler<ActionEvent> handler) {
         cupPourJuiceButton.setOnAction(handler);
     }
-    public void setCupPourWaterButtonHandler(EventHandler<ActionEvent> handler)
-    {
+    public void setCupPourWaterButtonHandler(EventHandler<ActionEvent> handler) {
         cupPourWaterButton.setOnAction(handler);
     }
     public void setCupPourOutButtonHandler(EventHandler<ActionEvent> handler)
     {
         cupPourOutButton.setOnAction(handler);
     }
-    public void setBottlePourJuiceButtonHandler(EventHandler<ActionEvent> handler)
-    {
+    public void setBottlePourJuiceButtonHandler(EventHandler<ActionEvent> handler) {
         bottlePourJuiceButton.setOnAction(handler);
     }
-    public void setBottlePourWaterButtonHandler(EventHandler<ActionEvent> handler)
-    {
+    public void setBottlePourWaterButtonHandler(EventHandler<ActionEvent> handler) {
         bottlePourWaterButton.setOnAction(handler);
     }
-    public void setBottlePourOutButtonHandler(EventHandler<ActionEvent> handler)
-    {
+    public void setBottlePourOutButtonHandler(EventHandler<ActionEvent> handler) {
         bottlePourOutButton.setOnAction(handler);
     }
     public String getHumanNameInput()
@@ -253,8 +242,7 @@ public class View{
     {
         bottleContentLabel.setText(string);
     }
-    public void setPane(Pane pane)
-    {
+    public void setPane(Pane pane) {
         pane.getChildren().addAll(humanNameLabel, humanNameField, humanSetNameButton, humanPourLiquidToBottleButton, humanPourLiquidToCupButton, humanDrinkFromBottleButton, humanDrinkFromCupButton);
         pane.getChildren().addAll(juiceLabel, juiceVolumeLabel, juiceTasteField, juiceTasteLabel, juiceVolumeField);
         pane.getChildren().addAll(waterLabel, waterVolumeField, waterVolumeLabel);

@@ -13,8 +13,7 @@ public class Vessel {
     {
         this.volume = volume;
     }
-    public Liquid pourOut()
-    {
+    public Liquid pourOut() {
         Liquid liquid = this.liquid;
         this.liquid = null;
         return liquid;
@@ -23,12 +22,11 @@ public class Vessel {
     {
         this.liquid = liquid;
     }
-    public String getContentString()
-    {
+    public String getContentString() {
         if(liquid == null)
         {
             return new String("Empty");
         }
-        return liquid.toString();
+        return liquid.getInfoString();
     }
 }

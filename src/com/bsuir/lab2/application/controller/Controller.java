@@ -91,8 +91,7 @@ public class Controller {
             view.setBottleContentLabel(model.getBottleContentString());
         }
     };
-    public Controller()
-    {
+    public Controller() {
         view.setCupPourOutButtonHandler(cupPourOutButtonEvent);
         view.setBottlePourOutButtonHandler(bottlePourOutButtonEvent);
         view.setHumanDrinkFromBottleButtonHandler(humanDrinkFromBottleButtonHandler);
@@ -108,8 +107,7 @@ public class Controller {
         view.setBottleContentLabel(model.getBottleContentString());
         view.setCupContentLabel(model.getCupContentString());
     };
-    public void setViewPane(Pane pane)
-    {
+    public void setViewPane(Pane pane) {
         view.setPane(pane);
     }
 }

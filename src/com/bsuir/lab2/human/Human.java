@@ -4,8 +4,7 @@ import com.bsuir.lab2.vessel.Vessel;
 
 public class Human {
     private String name;
-    public Human(String name)
-    {
+    public Human(String name) {
         this.name = name;
     }
     public void setName(String name) {
@@ -14,12 +13,10 @@ public class Human {
     public String getName() {
         return this.name;
     }
-    public void pourLiquid(Vessel from, Vessel to)
-    {
+    public void pourLiquid(Vessel from, Vessel to) {
         to.fill(from.pourOut());
     }
-    public void drink(Vessel vessel)
-    {
+    public void drink(Vessel vessel) {
         vessel.pourOut();
     }
 }

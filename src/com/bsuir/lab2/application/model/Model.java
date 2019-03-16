@@ -12,65 +12,49 @@ public class Model {
     private Cup cup = new Cup();
     private Juice juice = new Juice();
     private Water water = new Water();
-    public String getHumanName()
-    {
+    public String getHumanName() {
         return human.getName();
     }
-    public void setHumanName(String name)
-    {
+    public void setHumanName(String name) {
         human.setName(name);
     }
-    public void humanPourLiquidToCup()
-    {
+    public void humanPourLiquidToCup() {
         human.pourLiquid(bottle, cup);
     }
-    public void humanPourLiquidToBottle()
-    {
+    public void humanPourLiquidToBottle() {
         human.pourLiquid(cup, bottle);
     }
-    public String getBottleContentString()
-    {
+    public String getBottleContentString() {
         return bottle.getContentString();
     }
-    public String getCupContentString()
-    {
+    public String getCupContentString() {
         return cup.getContentString();
-    }
-    public void cupPourWater()
-    {
+    }public void cupPourWater() {
         cup.fill(water);
     }
-    public void cupPourJuice()
-    {
+    public void cupPourJuice() {
         cup.fill(juice);
     }
-    public void bottlePourWater()
-    {
+    public void bottlePourWater() {
         bottle.fill(water);
     }
-    public void bottlePourJuice()
-    {
+    public void bottlePourJuice() {
         bottle.fill(juice);
     }
-    public void setJuiceTaste(String taste)
-    {
+    public void setJuiceTaste(String taste) {
         juice = new Juice();
         juice.setTaste(taste);
     }
-    public void humanDrinkFromBottle()
-    {
+    public void humanDrinkFromBottle() {
         human.drink(bottle);
     }
-    public void humanDrinkFromCup()
-    {
+    public void humanDrinkFromCup() {
         human.drink(cup);
     }
-    public void cupPourOut()
-    {
+    public void cupPourOut() {
         cup.pourOut();
     }
-    public void bottlePourOut()
-    {
+    public void bottlePourOut() {
         bottle.pourOut();
     }
 }
