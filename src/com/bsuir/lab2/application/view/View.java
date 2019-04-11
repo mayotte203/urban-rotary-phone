@@ -8,21 +8,21 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.Pane;
 
 public class View{
-    final private String humanNameString = "Human";
-    final private String humanSetNameString = "Set name";
-    final private String humanPourLiquidToCupString = "Pour liquid(Bottle -> Cup";
-    final private String humanPourLiquidToBottleString = "Pour liquid(Cup -> Bottle)";
-    final private String humanDrinkFromCupString = "Drink from cup";
-    final private String humanDrinkFromBottleString ="Drink from bottle";
+    private final static String humanNameString = "Human";
+    private final static String humanSetNameString = "Set name";
+    private final static String humanPourLiquidToCupString = "Pour liquid(Bottle -> Cup";
+    private final static String humanPourLiquidToBottleString = "Pour liquid(Cup -> Bottle)";
+    private final static String humanDrinkFromCupString = "Drink from cup";
+    private final static String humanDrinkFromBottleString ="Drink from bottle";
 
-    final private Integer humanColumnLayoutX = 20;
-    final private Integer humanNameLabelLayoutY = 20;
-    final private Integer humanNameFieldLayoutY = 50;
-    final private Integer humanSetNameButtonLayoutY = 90;
-    final private Integer humanPourLiquidToBottleButtonLayoutY = 130;
-    final private Integer humanPourLiquidToCupButtonLayoutY = 170;
-    final private Integer humanDrinkFromBottleLayoutY = 210;
-    final private Integer humanDrinkFromCupLayoutY = 250;
+    private final static Integer humanColumnLayoutX = 20;
+    private final static Integer humanNameLabelLayoutY = 20;
+    private final static Integer humanNameFieldLayoutY = 50;
+    private final static Integer humanSetNameButtonLayoutY = 90;
+    private final static Integer humanPourLiquidToBottleButtonLayoutY = 130;
+    private final static Integer humanPourLiquidToCupButtonLayoutY = 170;
+    private final static Integer humanDrinkFromBottleLayoutY = 210;
+    private final static Integer humanDrinkFromCupLayoutY = 250;
 
     private Label humanNameLabel = new Label(humanNameString);
     private TextField humanNameField = new TextField();
@@ -32,16 +32,16 @@ public class View{
     private Button humanDrinkFromCupButton = new Button(humanDrinkFromCupString);
     private Button humanDrinkFromBottleButton = new Button(humanDrinkFromBottleString);
 
-    final private String juiceString = "Juice";
-    final private String juiceVolumeString = "Volume:";
-    final private String juiceTasteString = "Taste:";
+    private final static String juiceString = "Juice";
+    private final static String juiceVolumeString = "Volume:";
+    private final static String juiceTasteString = "Taste:";
 
-    final private Integer juiceColumnLayoutX = 200;
-    final private Integer juiceLabelLayoutY = 20;
-    final private Integer juiceVolumeLabelLayoutY = 50;
-    final private Integer juiceVolumeFieldLayoutY = 70;
-    final private Integer juiceTasteLabelLayoutY = 100;
-    final private Integer juiceTasteFieldLayoutY = 120;
+    private final static Integer juiceColumnLayoutX = 200;
+    private final static Integer juiceLabelLayoutY = 20;
+    private final static Integer juiceVolumeLabelLayoutY = 50;
+    private final static Integer juiceVolumeFieldLayoutY = 70;
+    private final static Integer juiceTasteLabelLayoutY = 100;
+    private final static Integer juiceTasteFieldLayoutY = 120;
 
     private Label juiceLabel = new Label(juiceString);
     private Label juiceVolumeLabel = new Label(juiceVolumeString );
@@ -49,32 +49,32 @@ public class View{
     private TextField juiceVolumeField = new TextField();
     private TextField juiceTasteField = new TextField();
 
-    final private String waterString = "Water";
-    final private String waterVolumeString = "Volume:";
+    private final static String waterString = "Water";
+    private final static String waterVolumeString = "Volume:";
 
-    final private Integer waterColumnLayoutX = 380;
-    final private Integer waterLabelLayoutY = 20;
-    final private Integer waterVolumeLabelLayoutY = 50;
-    final private Integer waterVolumeFieldLayoutY = 70;
+    private final static Integer waterColumnLayoutX = 380;
+    private final static Integer waterLabelLayoutY = 20;
+    private final static Integer waterVolumeLabelLayoutY = 50;
+    private final static Integer waterVolumeFieldLayoutY = 70;
 
     private Label waterLabel = new Label(waterString);
     private Label waterVolumeLabel = new Label(waterVolumeString);
     private TextField waterVolumeField = new TextField();
 
-    final private String cupString = "Cup";
-    final private String cupVolumeString = "Volume:";
-    final private String cupPourWaterString = "Pour water";
-    final private String cupPourJuiceString = "Pour juice";
-    final private String cupPourOutString = "Pour out";
+    private final static String cupString = "Cup";
+    private final static String cupVolumeString = "Volume:";
+    private final static String cupPourWaterString = "Pour water";
+    private final static String cupPourJuiceString = "Pour juice";
+    private final static String cupPourOutString = "Pour out";
 
-    final private Integer cupColumnLayoutX = 560;
-    final private Integer cupLabelLayoutY = 20;
-    final private Integer cupVolumeLabelLayoutY = 50;
-    final private Integer cupVolumeFieldLayoutY = 70;
-    final private Integer cupPourWaterButtonLayoutY = 110;
-    final private Integer cupPourJuiceButtonLayoutY = 150;
-    final private Integer cupPourOutButtonLayoutY = 190;
-    final private Integer cupContentLabelLayoutY = 230;
+    private final static Integer cupColumnLayoutX = 560;
+    private final static Integer cupLabelLayoutY = 20;
+    private final static Integer cupVolumeLabelLayoutY = 50;
+    private final static Integer cupVolumeFieldLayoutY = 70;
+    private final static Integer cupPourWaterButtonLayoutY = 110;
+    private final static Integer cupPourJuiceButtonLayoutY = 150;
+    private final static Integer cupPourOutButtonLayoutY = 190;
+    private final static Integer cupContentLabelLayoutY = 230;
 
     private Label cupLabel = new Label(cupString);
     private Label cupVolumeLabel = new Label(cupVolumeString);
@@ -84,20 +84,20 @@ public class View{
     private Button cupPourOutButton = new Button(cupPourOutString);
     private Label cupContentLabel= new Label();
 
-    final private String bottleString = "Bottle";
-    final private String bottleVolumeString = "Volume:";
-    final private String bottlePourWaterString = "Pour water";
-    final private String bottlePourJuiceString = "Pour juice";
-    final private String bottlePourOutString = "Pour out";
+    private final static String bottleString = "Bottle";
+    private final static String bottleVolumeString = "Volume:";
+    private final static String bottlePourWaterString = "Pour water";
+    private final static String bottlePourJuiceString = "Pour juice";
+    private final static String bottlePourOutString = "Pour out";
 
-    final private Integer bottleColumnLayoutX = 740;
-    final private Integer bottleLabelLayoutY = 20;
-    final private Integer bottleVolumeLabelLayoutY = 50;
-    final private Integer bottleVolumeFieldLayoutY = 70;
-    final private Integer bottlePourWaterButtonLayoutY = 110;
-    final private Integer bottlePourJuiceButtonLayoutY = 150;
-    final private Integer bottlePourOutButtonLayoutY = 190;
-    final private Integer bottleContentLabelLayoutY = 230;
+    private final static Integer bottleColumnLayoutX = 740;
+    private final static Integer bottleLabelLayoutY = 20;
+    private final static Integer bottleVolumeLabelLayoutY = 50;
+    private final static Integer bottleVolumeFieldLayoutY = 70;
+    private final static Integer bottlePourWaterButtonLayoutY = 110;
+    private final static Integer bottlePourJuiceButtonLayoutY = 150;
+    private final static Integer bottlePourOutButtonLayoutY = 190;
+    private final static Integer bottleContentLabelLayoutY = 230;
 
     private Label bottleLabel = new Label(bottleString);
     private Label bottleVolumeLabel = new Label(bottleVolumeString);
