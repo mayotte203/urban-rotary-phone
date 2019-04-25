@@ -16,11 +16,11 @@ public class Airport{
     public List<Plane> getLandedPlanes(){
         return landedPlanes;
     }
-    public void getLandingPermission(Plane plane){
+    public synchronized void getLandingPermission(Plane plane){
         planesQueue.add(plane);
         proceedQueue();
     }
-    public void takeOff(Plane plane){
+    public synchronized void takeOff(Plane plane){
         landedPlanes.remove(plane);
         proceedQueue();
     }
