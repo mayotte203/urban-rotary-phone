@@ -20,14 +20,7 @@ public class Controller{
         }
     };
 
-    private EventHandler<ActionEvent> updateViewButtonHandler = new EventHandler<ActionEvent>(){
-        @Override
-        public void handle(ActionEvent event) {
-            viewUpdate();
-        }
-    };
-
-    public void viewUpdate(){
+    public synchronized void viewUpdate(){
         List<String> listViewData = new LinkedList<String>();
         List<Plane> planesQueue = model.getPlanesQueue();
         for (Plane plane:
@@ -45,7 +38,6 @@ public class Controller{
     }
     public Controller() {
         view.setAddPlaneToQueueButtonHandler(addPlaneToQueueButtonHandler);
-        view.setUpdateButtonHandler(updateViewButtonHandler);
     }
 
     public void setViewPane(Pane pane) {

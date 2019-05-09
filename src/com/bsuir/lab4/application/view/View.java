@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class View{
-    private static final Integer queueLayotX = 20;
+    private static final Integer queueLayoutX = 20;
     private static final Integer airportLayoutX = 300;
     private static final Integer buttonOffsetY = 240;
     private static final Integer listViewMaxHeight = 200;
@@ -20,7 +20,6 @@ public class View{
 
     private static final String addPlaneButtonString = "Add plane";
     private static final String airstripLabelEmptyString = "Empty";
-    private static final String updateViewButtonString = "Update";
     private static final String planesQueueString = "Queue";
     private static final String airportLabelString = "Airport";
 
@@ -32,20 +31,19 @@ public class View{
     private Label airstrip4Status = new Label();
     private Label airstrip5Status = new Label();
     private List<Label> airstripsList = new ArrayList<>();
-    private Button updateButton = new Button();
     private Label queueLabel = new Label();
     private Label airportLabel = new Label();
     public View() {
-        queueLabel.setLayoutX(queueLayotX);
+        queueLabel.setLayoutX(queueLayoutX);
         queueLabel.setLayoutY(labelLayoutY);
         queueLabel.setText(planesQueueString);
         airportLabel.setLayoutX(airportLayoutX);
         airportLabel.setLayoutY(labelLayoutY);
         airportLabel.setText(airportLabelString);
-        planesQueueListView.setLayoutX(queueLayotX);
+        planesQueueListView.setLayoutX(queueLayoutX);
         planesQueueListView.setLayoutY(listViewLayoutY);
         planesQueueListView.setMaxHeight(listViewMaxHeight);
-        addPlaneToQueueButton.setLayoutX(queueLayotX);
+        addPlaneToQueueButton.setLayoutX(queueLayoutX);
         addPlaneToQueueButton.setLayoutY(buttonOffsetY);
         addPlaneToQueueButton.setText(addPlaneButtonString);
         airstrip1Status.setLayoutX(airportLayoutX);
@@ -63,9 +61,6 @@ public class View{
         airstrip5Status.setLayoutX(airportLayoutX);
         airstrip5Status.setLayoutY(140);
         airstrip5Status.setText(airstripLabelEmptyString);
-        updateButton.setLayoutX(airportLayoutX);
-        updateButton.setLayoutY(buttonOffsetY);
-        updateButton.setText(updateViewButtonString);
         airstripsList.add(airstrip1Status);
         airstripsList.add(airstrip2Status);
         airstripsList.add(airstrip3Status);
@@ -88,13 +83,10 @@ public class View{
         }
     }
     public void setPane(Pane pane) {
-        pane.getChildren().addAll(updateButton,planesQueueListView, addPlaneToQueueButton, airstrip1Status, airstrip2Status, airstrip3Status, airstrip4Status, airstrip5Status);
+        pane.getChildren().addAll(planesQueueListView, addPlaneToQueueButton, airstrip1Status, airstrip2Status, airstrip3Status, airstrip4Status, airstrip5Status);
     }
 
     public void setAddPlaneToQueueButtonHandler(EventHandler<ActionEvent> handler){
         addPlaneToQueueButton.setOnAction(handler);
-    }
-    public void setUpdateButtonHandler(EventHandler<ActionEvent> handler){
-        updateButton.setOnAction(handler);
     }
 }

@@ -3,7 +3,6 @@ package com.bsuir.lab4.application.model;
 import com.bsuir.lab4.application.airport.Airport;
 import com.bsuir.lab4.application.plane.Plane;
 
-import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 

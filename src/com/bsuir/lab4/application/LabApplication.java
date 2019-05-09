@@ -1,16 +1,22 @@
 package com.bsuir.lab4.application;
 
 import com.bsuir.lab4.application.controller.Controller;
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
+import javafx.util.Duration;
 
 public class LabApplication extends javafx.application.Application {
-    final private Integer windowDefaultWidth = 940;
+    final private Integer windowDefaultWidth = 500;
     final private Integer windowDefaultHeight = 340;
     final private String windowName = "Lab 4";
     private Controller controller = new Controller();
+    Timeline timeline = new Timeline();
     @Override
     public void start(Stage stage) {
         Pane mainPane = new Pane();
@@ -22,5 +28,14 @@ public class LabApplication extends javafx.application.Application {
         stage.setWidth(windowDefaultWidth);
         stage.setHeight(windowDefaultHeight);
         stage.show();
+        timeline.setCycleCount(Timeline.INDEFINITE);
+        timeline.getKeyFrames().add(
+                new KeyFrame(Duration.millis(250),
+                        new EventHandler<ActionEvent>() {
+                            public void handle(ActionEvent event) {
+                                controller.viewUpdate();
+                            }
+                        }));
+        timeline.playFromStart();
     }
 }
