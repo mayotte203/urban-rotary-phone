@@ -13,10 +13,20 @@ public class GreetingController {
         return "greeting";
     }
 
-    @PostMapping("/greeting")
-    @ResponseBody
-    public Rectangle greetingSubmit(@ModelAttribute Greeting greeting) {
-        return new Rectangle(greeting.getWidth(), greeting.getHeight());
+    @RequestMapping(value = "/rectangle" , method = RequestMethod.POST)
+    public @ResponseBody Rectangle rectangleResponse(@RequestBody Rectangle jsonRectangel) {
+        return jsonRectangel;
     }
 
+    @RequestMapping(value = "/power" , method = RequestMethod.POST)
+    public @ResponseBody Power rectangleResponse(@RequestBody Power jsonPower) {
+        return jsonPower;
+    }
+
+    @RequestMapping(value = "/findnumbers" , method = RequestMethod.POST)
+    public @ResponseBody FindNumbers rectangleResponse(@RequestBody FindNumbers jsonFindNumbers) {
+        return jsonFindNumbers;
+    }
 }
+
+
