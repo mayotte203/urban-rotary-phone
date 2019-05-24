@@ -7,6 +7,7 @@ import com.bsuir.lab3.vessel.liquid.Liquid;
 public class Human {
     private String name;
     private Liquid liquid;
+    public String getLiquidString() { return liquid.getInfoString(); }
     public Human(String name) {
         this.name = name;
     }
@@ -23,6 +24,6 @@ public class Human {
         liquid = vessel.pourOut();
     }
     public void buyLiquid(Shop shop, Liquid liquid){
-        this.liquid = shop.serveBuyer(liquid);
+        this.liquid = shop.issueGoods(liquid);
     }
 }

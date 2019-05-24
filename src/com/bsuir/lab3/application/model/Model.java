@@ -62,4 +62,21 @@ public class Model {
     public void bottlePourOut() {
         bottle.pourOut();
     }
+    public String getHumanLiquidString(){return human.getLiquidString();};
+    public void humanBuyLiquid(Shop shop, Liquid liquid) {human.buyLiquid(shop, liquid);};
+    public void humanBuyCoffee(){
+        humanBuyLiquid(shop, new Coffe());
+    }
+    public void humanBuyWater(){
+        humanBuyLiquid(shop, new Water());
+    }
+    public void humanBuyTea(){
+        humanBuyLiquid(shop, new Tea());
+    }
+    public void humanBuyJuice(String taste){
+        juice = new Juice();
+        juice.setTaste(taste);
+        humanBuyLiquid(shop, juice);
+    }
+
 }

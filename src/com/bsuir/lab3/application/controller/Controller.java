@@ -91,6 +91,34 @@ public class Controller {
             view.setBottleContentLabel(model.getBottleContentString());
         }
     };
+    EventHandler<ActionEvent> buyWaterButtonEvent = new EventHandler<ActionEvent>() {
+        @Override
+        public void handle(ActionEvent event) {
+            model.humanBuyWater();
+            view.setHumanLastLiquidLabelText(model.getHumanLiquidString());
+        }
+    };
+    EventHandler<ActionEvent> buyTeaButtonEvent = new EventHandler<ActionEvent>() {
+        @Override
+        public void handle(ActionEvent event) {
+            model.humanBuyTea();
+            view.setHumanLastLiquidLabelText(model.getHumanLiquidString());
+        }
+    };
+    EventHandler<ActionEvent> buyCoffeeButtonEvent = new EventHandler<ActionEvent>() {
+        @Override
+        public void handle(ActionEvent event) {
+            model.humanBuyCoffee();
+            view.setHumanLastLiquidLabelText(model.getHumanLiquidString());
+        }
+    };
+    EventHandler<ActionEvent> buyJuiceButtonEvent = new EventHandler<ActionEvent>() {
+        @Override
+        public void handle(ActionEvent event) {
+            model.humanBuyJuice(view.getShopJuiceTasteFieldString());
+            view.setHumanLastLiquidLabelText(model.getHumanLiquidString());
+        }
+    };
     public Controller() {
         view.setCupPourOutButtonHandler(cupPourOutButtonEvent);
         view.setBottlePourOutButtonHandler(bottlePourOutButtonEvent);
@@ -103,7 +131,10 @@ public class Controller {
         view.setBottlePourWaterButtonHandler(bottlePourWaterButtonEvent);
         view.setBottlePourJuiceButtonHandler(bottlePourJuiceButtonEvent);
         view.setHumanSetNameButtonHandler(humanSetNameActionEvent);
-
+        view.setBuyWaterButtonHandler(buyWaterButtonEvent);
+        view.setBuyCoffeeButtonHandler(buyCoffeeButtonEvent);
+        view.setBuyTeaButtonHandler(buyTeaButtonEvent);
+        view.setBuyJuiceButtonHandler(buyJuiceButtonEvent);
         view.setBottleContentLabel(model.getBottleContentString());
         view.setCupContentLabel(model.getCupContentString());
     };
