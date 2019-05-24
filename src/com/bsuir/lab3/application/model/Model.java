@@ -4,12 +4,15 @@ import com.bsuir.lab3.human.Human;
 import com.bsuir.lab3.shop.Shop;
 import com.bsuir.lab3.vessel.*;
 import com.bsuir.lab3.vessel.liquid.*;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 
 
 public class Model {
     final private String humanDefaultName = "Human";
     private Shop shop = new Shop();
-    private Human human = new Human(humanDefaultName);
+    private Human human;
+    private ObservableList<Human> humansList = FXCollections.observableArrayList();
     private Bottle bottle = new Bottle();
     private Cup cup = new Cup();
     private Juice juice = new Juice();
@@ -17,15 +20,23 @@ public class Model {
     private Tea tea = new Tea();
     private Coffe coffe = new Coffe();
     public String getHumanName() {
+        if(human == null)
+        {
+            return null;
+        }
         return human.getName();
     }
     public void setHumanName(String name) {
-        human.setName(name);
+        if(human != null) {
+            human.setName(name);
+        }
     }
     public void humanPourLiquidToCup() {
+        if(human != null)
         human.pourLiquid(bottle, cup);
     }
     public void humanPourLiquidToBottle() {
+        if(human != null)
         human.pourLiquid(cup, bottle);
     }
     public String getBottleContentString() {
@@ -51,9 +62,11 @@ public class Model {
         juice.setTaste(taste);
     }
     public void humanDrinkFromBottle() {
+        if(human != null)
         human.drink(bottle);
     }
     public void humanDrinkFromCup() {
+        if(human != null)
         human.drink(cup);
     }
     public void cupPourOut() {
@@ -62,8 +75,17 @@ public class Model {
     public void bottlePourOut() {
         bottle.pourOut();
     }
-    public String getHumanLiquidString(){return human.getLiquidString();};
-    public void humanBuyLiquid(Shop shop, Liquid liquid) {human.buyLiquid(shop, liquid);};
+    public String getHumanLiquidString() {
+        if (human == null)
+        {
+            return null;
+        }
+        return human.getLiquidString();
+    }
+    public void humanBuyLiquid(Shop shop, Liquid liquid) {
+        if(human != null)
+        human.buyLiquid(shop, liquid);
+    }
     public void humanBuyCoffee(){
         humanBuyLiquid(shop, new Coffe());
     }
@@ -78,5 +100,21 @@ public class Model {
         juice.setTaste(taste);
         humanBuyLiquid(shop, juice);
     }
-
+    public ObservableList getHumansList(){
+        return humansList;
+    }
+    public void addHuman(){
+        humansList.add(new Human(humanDefaultName));
+    }
+    public void removeHuman(int value){
+        humansList.remove(value);
+    }
+    public void setCurrentHuman(int value){
+        if(value != -1) {
+            human = humansList.get(value);
+        }
+        else{
+            human = null;
+        }
+    }
 }

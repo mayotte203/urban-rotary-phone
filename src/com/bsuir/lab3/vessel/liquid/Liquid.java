@@ -1,12 +1,12 @@
 package com.bsuir.lab3.vessel.liquid;
 
 public class Liquid {
-    private Integer volume = 0;
+    private int volume = 0;
 
-    public Integer getVolume() {
+    public int getVolume() {
         return volume;
     }
-    public void setVolume(Integer volume) {
+    public void setVolume(int volume) {
         this.volume = volume;
     }
     public String getInfoString(){

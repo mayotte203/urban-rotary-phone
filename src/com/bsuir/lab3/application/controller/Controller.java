@@ -2,18 +2,28 @@ package com.bsuir.lab3.application.controller;
 
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import com.bsuir.lab3.application.model.Model;
 import com.bsuir.lab3.application.view.View;
 
 public class Controller {
+    private final static String humanNameNone = "None";
+        private final static String liquidNameNone = "None";
+
     private View view = new View();
     private Model model = new Model();
     EventHandler<ActionEvent> humanSetNameActionEvent = new EventHandler<ActionEvent>() {
         @Override
         public void handle(ActionEvent event) {
             model.setHumanName(view.getHumanNameInput());
-            view.setHumanNameLabelText(model.getHumanName());
+            if(model.getHumanName() == null) {
+                view.setHumanNameLabelText(humanNameNone);
+            }
+            else {
+                view.setHumanNameLabelText(model.getHumanName());
+            }
+            view.refreshHumansListView();
         }
     };
     EventHandler<ActionEvent> humanPourLiquidToCupButtonEvent = new EventHandler<ActionEvent>() {
@@ -95,28 +105,97 @@ public class Controller {
         @Override
         public void handle(ActionEvent event) {
             model.humanBuyWater();
-            view.setHumanLastLiquidLabelText(model.getHumanLiquidString());
+            if(model.getHumanLiquidString() == null) {
+                view.setHumanLastLiquidLabelText(liquidNameNone);
+            }
+            else {
+                view.setHumanLastLiquidLabelText(model.getHumanLiquidString());
+            }
         }
     };
     EventHandler<ActionEvent> buyTeaButtonEvent = new EventHandler<ActionEvent>() {
         @Override
         public void handle(ActionEvent event) {
             model.humanBuyTea();
-            view.setHumanLastLiquidLabelText(model.getHumanLiquidString());
+            if(model.getHumanLiquidString() == null) {
+                view.setHumanLastLiquidLabelText(liquidNameNone);
+            }
+            else {
+                view.setHumanLastLiquidLabelText(model.getHumanLiquidString());
+            }
         }
     };
     EventHandler<ActionEvent> buyCoffeeButtonEvent = new EventHandler<ActionEvent>() {
         @Override
         public void handle(ActionEvent event) {
             model.humanBuyCoffee();
-            view.setHumanLastLiquidLabelText(model.getHumanLiquidString());
+            if(model.getHumanLiquidString() == null) {
+                view.setHumanLastLiquidLabelText(liquidNameNone);
+            }
+            else {
+                view.setHumanLastLiquidLabelText(model.getHumanLiquidString());
+            }
         }
     };
     EventHandler<ActionEvent> buyJuiceButtonEvent = new EventHandler<ActionEvent>() {
         @Override
         public void handle(ActionEvent event) {
             model.humanBuyJuice(view.getShopJuiceTasteFieldString());
-            view.setHumanLastLiquidLabelText(model.getHumanLiquidString());
+            if(model.getHumanLiquidString() == null) {
+                view.setHumanLastLiquidLabelText(liquidNameNone);
+            }
+            else {
+                view.setHumanLastLiquidLabelText(model.getHumanLiquidString());
+            }
+        }
+    };
+    EventHandler<ActionEvent> addHumanButtonHandler = new EventHandler<ActionEvent>() {
+        @Override
+        public void handle(ActionEvent event) {
+            model.addHuman();
+            view.refreshHumansListView();
+        }
+    };
+    EventHandler<ActionEvent> removeHumanButtonHandler = new EventHandler<ActionEvent>() {
+        @Override
+        public void handle(ActionEvent event) {
+            if(view.getSelectedHuman() != -1) {
+                model.removeHuman(view.getSelectedHuman());
+                view.refreshHumansListView();
+            }
+            model.setCurrentHuman(view.getSelectedHuman());
+            if(model.getHumanLiquidString() == null) {
+                view.setHumanLastLiquidLabelText(liquidNameNone);
+            }
+            else {
+                view.setHumanLastLiquidLabelText(model.getHumanLiquidString());
+            }
+            if(model.getHumanName() == null) {
+                view.setHumanNameLabelText(humanNameNone);
+            }
+            else {
+                view.setHumanNameLabelText(model.getHumanName());
+            }
+        }
+    };
+    EventHandler<MouseEvent> humansListVeiwOnMouseClickedEventHandler = new EventHandler<MouseEvent>() {
+        @Override
+        public void handle(MouseEvent event) {
+            if(view.getSelectedHuman() != -1) {
+                model.setCurrentHuman(view.getSelectedHuman());
+                if(model.getHumanLiquidString() == null) {
+                    view.setHumanLastLiquidLabelText(liquidNameNone);
+                }
+                else {
+                    view.setHumanLastLiquidLabelText(model.getHumanLiquidString());
+                }
+                if(model.getHumanName() == null) {
+                    view.setHumanNameLabelText(humanNameNone);
+                }
+                else {
+                    view.setHumanNameLabelText(model.getHumanName());
+                }
+            }
         }
     };
     public Controller() {
@@ -137,6 +216,10 @@ public class Controller {
         view.setBuyJuiceButtonHandler(buyJuiceButtonEvent);
         view.setBottleContentLabel(model.getBottleContentString());
         view.setCupContentLabel(model.getCupContentString());
+        view.setHumansListVeiwList(model.getHumansList());
+        view.setAddHumanButtonHandler(addHumanButtonHandler);
+        view.setRemoveHumanButtonHandler(removeHumanButtonHandler);
+        view.setHumansListViewOnMouseClickedEvent(humansListVeiwOnMouseClickedEventHandler);
     };
     public void setViewPane(Pane pane) {
         view.setPane(pane);

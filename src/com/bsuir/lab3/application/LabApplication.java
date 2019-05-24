@@ -7,7 +7,7 @@ import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
 public class LabApplication extends javafx.application.Application {
-    final private Integer windowDefaultWidth = 1280;
+    final private Integer windowDefaultWidth = 1340;
     final private Integer windowDefaultHeight = 380;
     final private String windowName = "Lab 3";
     private Controller controller = new Controller();

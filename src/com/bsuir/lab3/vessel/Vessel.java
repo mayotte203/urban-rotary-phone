@@ -3,13 +3,13 @@ package com.bsuir.lab3.vessel;
 import com.bsuir.lab3.vessel.liquid.*;
 
 public class Vessel {
-    private Integer volume = 0;
+    private int volume = 0;
     private Liquid liquid;
 
-    public  Integer getVolume() {
+    public int getVolume() {
         return volume;
     }
-    public void setVolume(Integer volume) {
+    public void setVolume(int volume) {
         this.volume = volume;
     }
     public Liquid pourOut() {
