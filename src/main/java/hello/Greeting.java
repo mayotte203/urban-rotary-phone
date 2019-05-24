@@ -3,8 +3,8 @@ package hello;
 public class Greeting {
     private long perimeter;
     private long square;
-    private long width;
-    private long height;
+    private int width;
+    private int height;
 
     public long getPerimeter() {
         return perimeter;
@@ -21,19 +21,19 @@ public class Greeting {
         this.square = square;
     }
 
-    public long getWidth() {
+    public int getWidth() {
         return width;
     }
 
-    public void setWidth(long width) {
+    public void setWidth(int width) {
         this.width = width;
     }
 
-    public long getHeight() {
+    public int getHeight() {
         return height;
     }
 
-    public void setHeight(long height) {
+    public void setHeight(int height) {
         this.height = height;
     }
 
