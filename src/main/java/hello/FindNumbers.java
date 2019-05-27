@@ -4,8 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class FindNumbers {
-    int from;
-    int to;
+    private int from;
+    private int to;
     List<Integer> resultList;
     FindNumbers(int from, int to)
     {

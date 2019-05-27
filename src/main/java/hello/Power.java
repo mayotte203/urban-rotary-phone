@@ -1,13 +1,16 @@
 package hello;
 
 public class Power {
-    int number;
-    int power;
-    Power(int number, int power){
+    private int number;
+    private int power;
+    public Power(int number, int power){
         this.number = number;
         this.power = power;
     }
-    public int getResult(){
-        return (int)Math.pow(number, power);
+    public int getNumber(){
+        return number;
+    }
+    public int getPower(){
+        return power;
     }
 }
